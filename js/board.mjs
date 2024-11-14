@@ -33,7 +33,7 @@ export function update(layout) {
     grid.innerHTML = ''
 
     for (let i=0; i < layout.length; i++) {
-        if (i == 30) {
+        if (i == total) {
             for (let j=0; j < 6; j++) {
                 const filler = document.createElement('div')
                 filler.className = 'empty'
@@ -67,11 +67,11 @@ export function stagger() {
 
     for (let i=0; i < keys.length; i++) {
         let style = ''
-        if (i < 10) {
+        if (i < cols) {
             style = 'calc(var(--size) * -3)'
-        } else if (i < 20) {
+        } else if (i < cols * 2 ) {
             style = 'calc(var(--size) * -1)'
-        } else if (i < 30) {
+        } else if (i < cols * 3) {
             style = 'calc(var(--size) * 3)'
         } else {
             style = 'calc(var(--size) * -1)'
