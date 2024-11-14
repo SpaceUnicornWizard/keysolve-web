@@ -77,11 +77,11 @@ window.mirror = function() {
         letters.push(key.innerHTML)
     }
 
-    letters = letters.slice(0, 30)
+    letters = letters.slice(0, total)
 
-    for (let row=0; row < 3; row++) {
-        for (let col=0; col < 10; col++) {
-            const key = keys[(2-row)*10 + col]
+    for (let row=0; row < rows; row++) {
+        for (let col=0; col < cs; col++) {
+            const key = keys[(2-row)*cols + col]
             const letter = letters.pop()
 
             key.className = `cell center ${letter}`
@@ -101,11 +101,11 @@ window.invert = function() {
         letters.push(key.innerHTML)
     }
 
-    letters = letters.slice(0, 30)
+    letters = letters.slice(0, total)
 
-    for (let row=0; row < 3; row++) {
-        for (let col=0; col < 10; col++) {
-            const key = keys[(2-row)*10 + col]
+    for (let row=0; row < rows; row++) {
+        for (let col=0; col < cols; col++) {
+            const key = keys[(2-row)*cols + col]
             const letter = letters.shift()
 
             key.className = `cell center ${letter}`
