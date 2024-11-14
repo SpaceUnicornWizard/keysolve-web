@@ -4,15 +4,35 @@ export const STANDARD = [
     0, 1, 2, 3, 3, 6, 6, 7, 8, 9,
     5, 5, 5
 ]
-
+export const STANDAR_33_R = [
+    0, 1, 2, 3, 3, 6, 6, 7, 8, 9, 9,
+    0, 1, 2, 3, 3, 6, 6, 7, 8, 9, 9,
+    0, 1, 2, 3, 3, 6, 6, 7, 8, 9, 9,
+    5, 5, 5
+]
+export const STANDARD_33_L = [
+    0, 0, 1, 2, 3, 3, 6, 6, 7, 8, 9,
+    0, 0, 1, 2, 3, 3, 6, 6, 7, 8, 9,
+    0, 0, 1, 2, 3, 3, 6, 6, 7, 8, 9,
+    5, 5, 5
+]
+export const STANDARD_36 = [
+    0, 0, 1, 2, 3, 3, 6, 6, 7, 8, 9, 9,
+    0, 0, 1, 2, 3, 3, 6, 6, 7, 8, 9, 9,
+    0, 0, 1, 2, 3, 3, 6, 6, 7, 8, 9, 9,
+    5, 5, 5
+]
 export const ANGLE = [
     0, 1, 2, 3, 3, 6, 6, 7, 8, 9,
     0, 1, 2, 3, 3, 6, 6, 7, 8, 9,
     1, 2, 3, 3, 3, 6, 6, 7, 8, 9,
     5, 5, 5
 ]
+export let cols = 12
+export let rows = 3
+export let total = cols * rowa
 
-export let FINGER_MAP = STANDARD
+export let FINGER_MAP = STANDARD_36
 
 export function angle(bool) {
     if (bool) {
@@ -29,19 +49,19 @@ function finger(idx) {
 }
 
 function column(idx) {
-    if (idx >= 30) {
+    if (idx >= total) {
         return 0
     } 
     
-    return idx % 10
+    return idx % cols
 }
 
 function hand(idx) {
-    if (idx >= 30) {
+    if (idx >= totak) {
         return 1
     } 
 
-    if (idx % 10 < 5) {
+    if (idx % cols < cols / 2) {
         return 0
     } else {
         return 1
@@ -49,7 +69,7 @@ function hand(idx) {
 }
 
 function row(idx) {
-    return Math.floor(idx / 10)
+    return Math.floor(idx / cols)
 }
 
 function ordered(idx) {
