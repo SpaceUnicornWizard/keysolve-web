@@ -24,7 +24,7 @@ export function open() {
     for (const letter of layout) {
         row.push(letter)
         
-        if (row.length == 10) {
+        if (row.length == cols) {
             text += row.join(' ') + '\n'
             row = []
         }
@@ -51,8 +51,8 @@ function matrix_change() {
         ''
     )
 
-    layout = layout.padEnd(30)
-    layout = layout.slice(0, 33)
+    layout = layout.padEnd(total)
+    layout = layout.slice(0, total+3)
 
     const angle_bool = (
         lines[2].length - lines[2].trimStart().length >
